@@ -1,3 +1,9 @@
-export default function Page() {
-  return <h1>Cabins</h1>;
+function Page() {
+  return (
+    <div>
+      <h1>Cabins</h1>
+    </div>
+  );
 }
+
+export default Page;
