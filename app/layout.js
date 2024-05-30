@@ -1,3 +1,5 @@
+import { Josefin_Sans } from 'next/font/google';
+
 import '@/app/_styles/globals.css';
 
 import Logo from '@/app/_components/Logo';
@@ -9,10 +11,17 @@ export const metadata = {
     'Experience unparalleled luxury and serenity at our exclusive cabin hotel nestled in the heart of the Pyrenees. Enjoy breathtaking mountain views, premium amenities, our amazing hot springs, and world-class service for a perfect getaway. Book your stay today!',
 };
 
+const josefin = Josefin_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-primary-950 text-primary-100">
+      <body
+        className={`${josefin.className} min-h-screen bg-primary-950 text-primary-100`}
+      >
         <header>
           <Logo />
           <Navigation />
