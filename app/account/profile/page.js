@@ -1,4 +1,5 @@
 import SelectCountry from '@/app/_components/SelectCountry';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Update Profile',
@@ -38,7 +39,7 @@ function Page() {
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <label htmlFor="nationality">Where are you from?</label>
-            <img
+            <Image
               src={countryFlag}
               alt="Country flag"
               className="h-5 rounded-sm"
@@ -62,7 +63,7 @@ function Page() {
         </div>
 
         <div className="flex items-center justify-end gap-6">
-          <button className="px-4 px-8 font-semibold transition-all bg-accent-500 text-primary-800 hover:bg-accent-600 disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
+          <button className="px-8 py-2 font-semibold transition-all bg-accent-500 text-primary-800 hover:bg-accent-600 disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
             Update profile
           </button>
         </div>
