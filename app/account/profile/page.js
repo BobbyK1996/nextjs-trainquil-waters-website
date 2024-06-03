@@ -1,7 +1,7 @@
 import SelectCountry from '@/app/_components/SelectCountry';
 
 function Page() {
-  const countryFlag = 'pt.jpg';
+  const countryFlag = '';
   const nationality = 'Portugal';
 
   return (
@@ -23,31 +23,44 @@ function Page() {
           />
         </div>
 
-        <div>
+        <div className="space-y-2">
           <label>Email address</label>
-          <input disabled />
+          <input
+            disabled
+            className="w-full px-5 py-3 rounded-sm shadow-sm disabled:bg-gray-600 bg-primary-200 text-primary-800 disabled:cursor-not-allowed disabled:text-gray-400"
+          />
         </div>
 
-        <div>
-          <div>
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
             <label htmlFor="nationality">Where are you from?</label>
-            <img src={countryFlag} alt="Country flag" />
+            <img
+              src={countryFlag}
+              alt="Country flag"
+              className="h-5 rounded-sm"
+            />
           </div>
 
           <SelectCountry
             name="nationality"
             id="nationality"
             defaultCountry={nationality}
+            className="w-full px-5 py-3 rounded-sm shadow-sm bg-primary-200 text-primary-800"
           />
         </div>
 
-        <div>
+        <div className="space-y-2">
           <label htmlFor="nationalID">National ID number</label>
-          <input name="nationalID" />
+          <input
+            name="nationalID"
+            className="w-full px-5 py-3 rounded-sm shadow-sm bg-primary-200 text-primary-800"
+          />
         </div>
 
-        <div>
-          <button>Update profile</button>
+        <div className="flex items-center justify-end gap-6">
+          <button className="px-4 px-8 font-semibold transition-all bg-accent-500 text-primary-800 hover:bg-accent-600 disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
+            Update profile
+          </button>
         </div>
       </form>
     </div>
