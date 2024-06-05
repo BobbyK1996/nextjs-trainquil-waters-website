@@ -1,3 +1,5 @@
+import supabase from './supabase';
+
 export async function getCountries() {
   try {
     const res = await fetch(
