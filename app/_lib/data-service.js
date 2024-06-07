@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import supabase from './supabase';
 
 export async function getCountries() {
@@ -21,6 +22,7 @@ export async function getCabin(id) {
 
   if (error) {
     console.error(error);
+    notFound();
   }
 
   return data;
