@@ -1,12 +1,13 @@
 import SelectCountry from '@/app/_components/SelectCountry';
 import Image from 'next/image';
+import countryFlag from '@/public/pt-flag.png';
 
 export const metadata = {
   title: 'Update Profile',
 };
 
 function Page() {
-  const countryFlag = '';
+  // const countryFlag = '@/public/about-1.jpg';
   const nationality = 'Portugal';
 
   return (
@@ -43,6 +44,8 @@ function Page() {
               src={countryFlag}
               alt="Country flag"
               className="h-5 rounded-sm"
+              width={20}
+              height={20}
             />
           </div>
 
