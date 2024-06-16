@@ -1,14 +1,15 @@
+// import countryFlag from '@/public/pt-flag.png';
+
 import SelectCountry from '@/app/_components/SelectCountry';
-import Image from 'next/image';
-import countryFlag from '@/public/pt-flag.png';
+import UpdateProfileForm from '@/app/_components/UpdateProfileForm';
 
 export const metadata = {
   title: 'Update Profile',
 };
 
 function Page() {
-  // const countryFlag = '@/public/about-1.jpg';
-  const nationality = 'Portugal';
+  const countryFlag = 'pt.jpg';
+  const nationality = 'portugal';
 
   return (
     <div>
@@ -20,57 +21,14 @@ function Page() {
         faster and smoother. See you soon!
       </p>
 
-      <form className="flex flex-col gap-6 px-12 py-8 text-lg bg-primary-900">
-        <div className="space-y-2">
-          <label>Full name</label>
-          <input
-            disabled
-            className="w-full px-5 py-3 rounded-sm shadow-sm bg-primary-200 text-primary-800 disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label>Email address</label>
-          <input
-            disabled
-            className="w-full px-5 py-3 rounded-sm shadow-sm disabled:bg-gray-600 bg-primary-200 text-primary-800 disabled:cursor-not-allowed disabled:text-gray-400"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <label htmlFor="nationality">Where are you from?</label>
-            <Image
-              src={countryFlag}
-              alt="Country flag"
-              className="h-5 rounded-sm"
-              width={20}
-              height={20}
-            />
-          </div>
-
-          <SelectCountry
-            name="nationality"
-            id="nationality"
-            defaultCountry={nationality}
-            className="w-full px-5 py-3 rounded-sm shadow-sm bg-primary-200 text-primary-800"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="nationalID">National ID number</label>
-          <input
-            name="nationalID"
-            className="w-full px-5 py-3 rounded-sm shadow-sm bg-primary-200 text-primary-800"
-          />
-        </div>
-
-        <div className="flex items-center justify-end gap-6">
-          <button className="px-8 py-2 font-semibold transition-all bg-accent-500 text-primary-800 hover:bg-accent-600 disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
-            Update profile
-          </button>
-        </div>
-      </form>
+      <UpdateProfileForm>
+        <SelectCountry
+          name="nationality"
+          id="nationality"
+          defaultCountry={nationality}
+          className="w-full px-5 py-3 rounded-sm shadow-sm bg-primary-200 text-primary-800"
+        />
+      </UpdateProfileForm>
     </div>
   );
 }
