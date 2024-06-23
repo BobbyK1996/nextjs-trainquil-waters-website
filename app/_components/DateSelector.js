@@ -1,9 +1,9 @@
 'use client';
 
 import { isWithinInterval } from 'date-fns';
-import { useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
+import { useReservation } from '../context/ReservationContext';
 
 function isAlreadyBooked(range, datesArr) {
   return (
@@ -16,7 +16,7 @@ function isAlreadyBooked(range, datesArr) {
 }
 
 function DateSelector({ settings, cabin, bookedDates }) {
-  const [range, setRange] = useState({ from: undefined, to: undefined });
+  const { range, setRange } = useReservation();
 
   // temp variables
   const regularPrice = 23;
@@ -26,10 +26,10 @@ function DateSelector({ settings, cabin, bookedDates }) {
 
   const { minBookingLength, maxBookingLength } = settings;
 
-  const handleSelect = (selectedRange) => {
-    if (selectedRange === undefined) return;
-    setRange(selectedRange);
-  };
+  // const handleSelect = (selectedRange) => {
+  //   if (selectedRange === undefined) return;
+  //   setRange(selectedRange);
+  // };
 
   return (
     <div>
@@ -37,7 +37,7 @@ function DateSelector({ settings, cabin, bookedDates }) {
         <DayPicker
           className="pt-12 scale-90 place-self-center"
           mode="range"
-          onSelect={handleSelect}
+          onSelect={setRange}
           selected={range}
           min={minBookingLength + 1}
           max={maxBookingLength}

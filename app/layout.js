@@ -3,6 +3,7 @@ import { Josefin_Sans } from 'next/font/google';
 import '@/app/_styles/globals.css';
 
 import Header from './_components/Header';
+import { ReservationProvider } from './context/ReservationContext';
 
 export const metadata = {
   title: { template: '%s: Tranquil Waters', default: 'Tranquil Waters' },
@@ -23,7 +24,9 @@ function RootLayout({ children }) {
       >
         <Header />
         <div className="grid flex-1 px-8 py-12">
-          <main className="w-full mx-auto max-w-7xl">{children}</main>
+          <main className="w-full mx-auto max-w-7xl">
+            <ReservationProvider>{children}</ReservationProvider>
+          </main>
         </div>
       </body>
     </html>
