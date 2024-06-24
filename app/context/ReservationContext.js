@@ -8,6 +8,7 @@ const initialState = { from: undefined, to: undefined };
 
 function ReservationProvider({ children }) {
   const [range, setRange] = useState(initialState);
+  const resetRange = () => setRange(initialState);
 
   const handleSelect = (selectedRange) => {
     if (selectedRange === undefined) return;
@@ -15,7 +16,7 @@ function ReservationProvider({ children }) {
   };
 
   return (
-    <ReservationContext.Provider value={{ range, handleSelect }}>
+    <ReservationContext.Provider value={{ range, handleSelect, resetRange }}>
       {children}
     </ReservationContext.Provider>
   );
